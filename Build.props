@@ -1,7 +1,7 @@
 <Project>
 	<PropertyGroup>
 		<RootNamespace>
-			ElboraiSoftware.KeyboardLayout.$(MSBuildProjectName.Replace(" ", "_"))
+			ElboraiSoftware.SOLUTION_NAME_UPDATE_BUILD_PROPS_FILE.$(MSBuildProjectName.Replace(" ", "_"))
 		</RootNamespace>
 	</PropertyGroup>
 </Project>

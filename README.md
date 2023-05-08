@@ -14,7 +14,8 @@ C:\Users\Sam\Development\ElboraiSoftware PS> git clone git@github.com:ElboraiSof
 
 ### Build.props
 
-Copy manually to a solution root directory.
+1. Copy manually to a solution root directory.
+2. Replace `SOLUTION_NAME_UPDATE_BUILD_PROPS_FILE` in the copied Build.props.
 
 ### Directory.Build.props
 
