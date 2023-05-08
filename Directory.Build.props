@@ -1,9 +1,21 @@
 <Project>
 	<PropertyGroup>
+		<!-- Assembly information -->
 		<Company>Elborai Software</Company>
 		<Authors>Samuel El-Borai (dgellow), Elborai Software (ElboraiSoftware)</Authors>
 		<Copyright>Copyright © 2023 Samuel El-Borai &amp; Elborai Software</Copyright>
 		<PackagePublisherDisplayName>Elborai Software</PackagePublisherDisplayName>
+
+		<!-- Settings -->
 		<Deterministic>true</Deterministic>
+		<Nullable>enable</Nullable>
+
+		<!-- Root namespace for all projects -->
+		<CompanyName>ElboraiSoftware</CompanyName>
+		<!-- Remove solutionName if not necessary -->
+		<SolutionName>SOLUTION_NAME_UPDATE_BUILD_PROPS_FILE</SolutionName>
+		<RootNamespace>
+			$(CompanyName).$(SolutionName).$(MSBuildProjectName.Replace(" ", "_"))
+		</RootNamespace>
 	</PropertyGroup>
 </Project>

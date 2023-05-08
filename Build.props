@@ -1,7 +1,5 @@
 <Project>
 	<PropertyGroup>
-		<RootNamespace>
-			ElboraiSoftware.SOLUTION_NAME_UPDATE_BUILD_PROPS_FILE.$(MSBuildProjectName.Replace(" ", "_"))
-		</RootNamespace>
+		<!-- TODO -->
 	</PropertyGroup>
 </Project>
