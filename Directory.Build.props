@@ -1,0 +1,9 @@
+<Project>
+	<PropertyGroup>
+		<Company>Elborai Software</Company>
+		<Authors>Samuel El-Borai (dgellow), Elborai Software (ElboraiSoftware)</Authors>
+		<Copyright>Copyright © 2023 Samuel El-Borai &amp; Elborai Software</Copyright>
+		<PackagePublisherDisplayName>Elborai Software</PackagePublisherDisplayName>
+		<Deterministic>true</Deterministic>
+	</PropertyGroup>
+</Project>
