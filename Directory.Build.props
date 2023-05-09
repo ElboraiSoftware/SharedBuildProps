@@ -1,14 +1,27 @@
 <Project>
+    <ItemGroup>
+        <None Include="..\LICENSE.txt">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
     <PropertyGroup>
+        <!-- Package information -->
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+
         <!-- Assembly information -->
         <Company>Elborai Software</Company>
         <Authors>Samuel El-Borai (dgellow), Elborai Software (ElboraiSoftware)</Authors>
         <Copyright>Copyright © 2023 Samuel El-Borai &amp; Elborai Software</Copyright>
         <PackagePublisherDisplayName>Elborai Software</PackagePublisherDisplayName>
+        <Version>0.0.1-dev.1</Version>
 
         <!-- Settings -->
         <Deterministic>true</Deterministic>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 
         <!-- Prefixed namespace for all projects and assemblies -->
         <CompanyPrefix>ElboraiSoftware</CompanyPrefix>

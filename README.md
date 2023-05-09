@@ -2,23 +2,13 @@
 
 - .gitignore, a complete gitignore ruleset for Visual Studio projects
 - .editorconfig, formatting/coding style rules for C#
-- Build.props, reduce need to manually specify common namespaces
 - Directory.Build.props, ensure common assembly authorship information
 - TheSolutionName.sln.DotSettings, Resharper solution-wide config
+- LICENSE.txt, a "Free use, No derivatives" license
 
 ## How to use
 
-### .gitignore
-
-1. Copy manually to a solution root directory.
-
-### .editorconfig
-
-1. Copy manually to a solution root directory.
-
-### Build.props
-
-1. Copy manually to a solution root directory.
+Either copy manually files to a solution root, or use this repository as a template on GitHub.
 
 ### Directory.Build.props
 
