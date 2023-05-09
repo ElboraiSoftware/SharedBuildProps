@@ -1,0 +1,27 @@
+name: Build and test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_test:
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+        dotnet-version:
+          - "6.0.x"
+    runs-on: windows-latest
+    steps:
+      - name: .Net setup
+        uses: elboraisoftware/actions/dotnet_setup@main
+        with:
+          dotnet-version: "${{ matrix.dotnet-version }}"
+      - name: Build and test .Net projects
+        uses: elboraisoftware/actions/dotnet_build_and_test@main
+        with:
+          configuration: "${{ matrix.configuration }}"

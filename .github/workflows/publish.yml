@@ -1,0 +1,73 @@
+name: Publish NuGet package
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        required: true
+        description: "Project to publish"
+        type: choice
+        options:
+          - REPLACE_ME_WITH_PROJECT_NAME
+      version:
+        description: "Version to publish"
+        required: true
+      publish_to_github_packages:
+        description: "Publish to GitHub Packages"
+        type: boolean
+        required: true
+        default: true
+      publish_to_nuget_org:
+        description: "Also publish to public nuget.org registry"
+        type: boolean
+        default: false
+        required: true
+      create_gh_release:
+        description: "Create a github release"
+        type: boolean
+        default: false
+        required: true
+      prefix:
+        description: "Prefix used at the beginning of namespaces"
+        type: string
+        default: ElboraiSoftware
+        required: true
+
+jobs:
+  publish:
+    name: "${{ github.event.inputs.prefix }}.${{ github.event.inputs.project }} v${{ github.event.inputs.version }}"
+    runs-on: windows-latest
+    steps:
+      - name: Log inputs
+        shell: pwsh
+        run: Write-Host "${{ toJSON(github.event.inputs) }}"
+
+      - name: Validate version
+        uses: elboraisoftware/actions/validate_semantic_version@main
+        with:
+          version: "${{ github.event.inputs.version }}"
+
+      - name: .Net setup
+        uses: elboraisoftware/actions/dotnet_setup@main
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Build and test .Net projects
+        uses: elboraisoftware/actions/dotnet_build_and_test@main
+        with:
+          configuration: Release
+
+      - name: Pack and publish NuGet package
+        uses: elboraisoftware/actions/dotnet_publish_nuget@main
+        with:
+          csproj-path: "${{ github.event.inputs.project }}/${{ github.event.inputs.project }}.csproj"
+          version: "${{ github.event.inputs.version }}"
+          package_name: "${{ github.event.inputs.prefix }}.${{ github.event.inputs.project }}"
+          create_github_release: "${{ github.event.inputs.create_gh_release }}"
+          github_release_git_tag: "${{ github.event.inputs.project }}-v${{ github.event.inputs.version }}"
+          repository: "${{ github.repository }}"
+          repository_owner: "${{ github.repository_owner }}"
+          publish_to_github_packages: "${{ github.event.inputs.publish_to_github_packages }}"
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          publish_to_nuget: "${{ github.event.inputs.publish_to_nuget_org }}"
+          nuget_api_key: "${{ secrets.NUGET_API_KEY }}"
