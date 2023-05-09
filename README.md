@@ -4,6 +4,7 @@
 - .editorconfig, formatting/coding style rules for C#
 - Build.props, reduce need to manually specify common namespaces
 - Directory.Build.props, ensure common assembly authorship information
+- TheSolutionName.DotSettings, Resharper solution-wide config
 
 ## How to use
 
@@ -41,3 +42,8 @@ C:\Users\Sam\Development PS> new-item -path Directory.Build.props -itemtype Symb
 ```
 
 ⚠️ Unfortunately git will just add the symbolic link instead of its target, so that's not too ideal as the props file won't be included in the repository.
+
+### TheSolutionName.DotSettings
+
+1. Copy manually to a solution root directory.
+2. Rename to `<SolutionName>.DotSettings`.
