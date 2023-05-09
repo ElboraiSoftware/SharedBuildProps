@@ -1,7 +1,9 @@
 # MSBuild configuration shared between Elborai Software projects
 
-- Directory.Build.props, ensure common assembly authorship information
+- .gitignore, a complete gitignore ruleset for Visual Studio projects
+- .editorconfig, formatting/coding style rules for C#
 - Build.props, reduce need to manually specify common namespaces
+- Directory.Build.props, ensure common assembly authorship information
 
 ## How to use
 
@@ -11,6 +13,14 @@ Be sure to clone this repository in an `ElboraiSoftware` directory.
 PS> cd Development\ElboraiSoftware
 C:\Users\Sam\Development\ElboraiSoftware PS> git clone git@github.com:ElboraiSoftware/SharedBuildProps.git
 ```
+
+### .gitignore
+
+1. Copy manually to a solution root directory.
+
+### .editorconfig
+
+1. Copy manually to a solution root directory.
 
 ### Build.props
 
