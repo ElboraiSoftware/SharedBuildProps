@@ -33,15 +33,12 @@ on:
         default: ElboraiSoftware
         required: true
 
+env:
+  dotnet-version: "6.0.x"
+
 jobs:
-  publish:
-    name: "${{ github.event.inputs.prefix }}.${{ github.event.inputs.project }} v${{ github.event.inputs.version }}"
-    strategy:
-      matrix:
-        os:
-          - windows-latest
-          - ubuntu-latest
-    runs-on: ${{ matrix.os }}
+  inputs-validation:
+    runs-on: ubuntu-latest
     steps:
       - name: Log inputs
         shell: pwsh
@@ -52,15 +49,34 @@ jobs:
         with:
           version: "${{ github.event.inputs.version }}"
 
+  build-and-test:
+    name: "${{ github.event.inputs.prefix }}.${{ github.event.inputs.project }} v${{ github.event.inputs.version }}"
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    needs: inputs-validation
+    steps:
       - name: .Net setup
         uses: elboraisoftware/actions/dotnet_setup@main
         with:
-          dotnet-version: "6.0.x"
+          dotnet-version: "${{ env.dotnet-version }}"
 
       - name: Build and test .Net projects
         uses: elboraisoftware/actions/dotnet_build_and_test@main
         with:
           configuration: Release
+
+  publish:
+    runs-on: windows-latest
+    needs: build-and-test
+    steps:
+      - name: .Net setup
+        uses: elboraisoftware/actions/dotnet_setup@main
+        with:
+          dotnet-version: "${{ env.dotnet-version }}"
 
       - name: Pack and publish NuGet package
         uses: elboraisoftware/actions/dotnet_publish_nuget@main
