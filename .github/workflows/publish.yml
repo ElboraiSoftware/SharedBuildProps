@@ -36,7 +36,12 @@ on:
 jobs:
   publish:
     name: "${{ github.event.inputs.prefix }}.${{ github.event.inputs.project }} v${{ github.event.inputs.version }}"
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Log inputs
         shell: pwsh

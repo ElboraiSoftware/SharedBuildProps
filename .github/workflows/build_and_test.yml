@@ -15,7 +15,10 @@ jobs:
         configuration: [Debug, Release]
         dotnet-version:
           - "6.0.x"
-    runs-on: windows-latest
+        os:
+          - windows-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - name: .Net setup
         uses: elboraisoftware/actions/dotnet_setup@main
