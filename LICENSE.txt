@@ -1,26 +1,35 @@
+Elborai Proprietary Software License (EPSL) v1.0
+
 Copyright (c) 2023 Samuel El-Borai (Elborai Software), Hamburg, Germany.
 
-This license agreement ("License") is between you ("User") and Samuel El-Borai
-(Elborai Software). By using the software and associated documentation files
-(the "Software"), you agree to the following terms:
+This license agreement ("License") is a non-exclusive, worldwide, revocable
+license between you ("User") and Samuel El-Borai (Elborai Software). By using
+the software, its source code, object code, libraries, and associated
+documentation files (collectively, the "Software"), you agree to the following
+terms:
 
 1. You may incorporate the Software into a larger system or application and
-distribute it as part of that system or application. However, the Software
-itself should not be the primary value or functionality of the system or
-application you are distributing.
+distribute it as part of that system or application. The Software can form a
+significant part of the functionality of the system or application you are
+distributing, provided that your system or application adds significant original
+functionality or value. Merely creating a wrapper or similar superficial changes
+does not count as adding significant original functionality or value.
 
 2. You may not create or distribute derivative works, forks, or modified
 versions of the Software. Here, "derivative works" refers to any software that
-is based on, includes, or modifies substantial portions of the Software. For the
-purposes of this License, 'derivative work' does not include software which uses
-the Software through static or dynamic linking, so long as the Software itself
-is not modified and is used 'as is'
+is based on, includes, or modifies substantial portions (more than 20% of the
+original work provided by Samuel El-Borai (Elborai Software) as part of the
+Software) of the Software. However, software that uses the Software through
+static or dynamic linking does not count as a 'derivative work' so long as the
+Software itself is not modified and is used 'as is'.
 
 3. You may not republish the Software under a different name or distribute it
-independently on any package registry or similar platform.
+independently on any package registry or similar platform. This means you cannot
+act as the publisher of the Software.
 
-4. You may not commercially resell the Software as standalone software or as a
-library.
+4. You may not commercially resell, rent, sublicense, or otherwise commercially
+distribute the Software as standalone software or as a library. This means you
+cannot transfer any of the rights given to you by this License to third parties.
 
 5. You may decompile, reverse-engineer, or study the implementation of the
 Software for the purpose of understanding its workings. You may use the
@@ -28,18 +37,25 @@ knowledge gained from studying the Software to create your own, original
 software, as long as it does not constitute a derivative work of, or contain
 substantial portions of, the Software.
 
-You must include this copyright notice and permission notice in all copies or
-substantial portions of the Software.
+6. You must include the following copyright notice and permission notice in all
+copies or substantial portions of the Software: "Copyright (c) 2023 Samuel
+El-Borai (Elborai Software), Hamburg, Germany. Used under license."
 
-The Software is provided without any guarantees, warranties, or conditions,
-express or implied. This means that the author and copyright holder takes no
-responsibility and is not liable for any damages or other liabilities that might
-arise from the use or other dealings in the Software.
+The Software is provided "as is", without warranty of any kind, express or
+implied. This means that the author and copyright holder takes no responsibility
+and is not liable for any damages or other liabilities that might arise from the
+use or other dealings in the Software.
+
+This License may be terminated by Samuel El-Borai (Elborai Software) if you fail
+to comply with any of the terms of this License, upon which you must cease all
+use and destroy all copies of the Software.
+
+If any provision of this License is found to be invalid or unenforceable, the
+remaining provisions will remain in effect and the invalid or unenforceable
+provision will be replaced with a valid and enforceable provision that achieves
+the original intent.
 
 This License is governed by the laws of Germany. Any legal action or proceeding
 arising under this License will be brought exclusively in the courts located in
 Hamburg, Germany, and the parties irrevocably consent to the personal
 jurisdiction and venue therein.
-
-
-
