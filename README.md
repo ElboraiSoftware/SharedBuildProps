@@ -5,7 +5,7 @@
 
 - .gitignore, a complete gitignore ruleset for Visual Studio projects
 - .editorconfig, formatting/coding style rules for C#
-- .github/workflows, default github actions to test, build, and publish
+- .github/workflows, default github actions to test, build, and publish .Net projects
 - Directory.Build.props, ensure common assembly authorship information
 - TheSolutionName.sln.DotSettings, Resharper solution-wide config
 - LICENSE.txt, a "Free use, No derivatives" license
