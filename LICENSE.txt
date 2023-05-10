@@ -1,20 +1,45 @@
-Copyright (c) 2023 Samuel El-Borai (ElboraiSoftware)
+Copyright (c) 2023 Samuel El-Borai (Elborai Software), Hamburg, Germany.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, publish, and distribute copies of the Software, and to permit persons
-to whom the Software is furnished to do so, subject to the following conditions:
+This license agreement ("License") is between you ("User") and Samuel El-Borai
+(Elborai Software). By using the software and associated documentation files
+(the "Software"), you agree to the following terms:
 
-1. The creation of derivative works, including forks or modified versions of the Software, is not permitted.
+1. You may incorporate the Software into a larger system or application and
+distribute it as part of that system or application. However, the Software
+itself should not be the primary value or functionality of the system or
+application you are distributing.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+2. You may not create or distribute derivative works, forks, or modified
+versions of the Software. Here, "derivative works" refers to any software that
+is based on, includes, or modifies substantial portions of the Software. For the
+purposes of this License, 'derivative work' does not include software which uses
+the Software through static or dynamic linking, so long as the Software itself
+is not modified and is used 'as is'
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+3. You may not republish the Software under a different name or distribute it
+independently on any package registry or similar platform.
+
+4. You may not commercially resell the Software as standalone software or as a
+library.
+
+5. You may decompile, reverse-engineer, or study the implementation of the
+Software for the purpose of understanding its workings. You may use the
+knowledge gained from studying the Software to create your own, original
+software, as long as it does not constitute a derivative work of, or contain
+substantial portions of, the Software.
+
+You must include this copyright notice and permission notice in all copies or
+substantial portions of the Software.
+
+The Software is provided without any guarantees, warranties, or conditions,
+express or implied. This means that the author and copyright holder takes no
+responsibility and is not liable for any damages or other liabilities that might
+arise from the use or other dealings in the Software.
+
+This License is governed by the laws of Germany. Any legal action or proceeding
+arising under this License will be brought exclusively in the courts located in
+Hamburg, Germany, and the parties irrevocably consent to the personal
+jurisdiction and venue therein.
+
+
+
