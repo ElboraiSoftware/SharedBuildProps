@@ -9,6 +9,7 @@
 - Directory.Build.props, ensure common assembly authorship information
 - TheSolutionName.sln.DotSettings, Resharper solution-wide config
 - LICENSE.txt, a "Free use, No derivatives" license
+- nuget.config, config to use private nuget packages, requires credentials
 
 ## How to use
 
@@ -23,3 +24,9 @@ Either copy manually files to a solution root, or use this repository as a templ
 
 1. Copy manually to a solution root directory.
 2. Rename to `<SolutionName>.sln.DotSettings`.
+
+### How to use NuGet packages from ElboraiSoftware's GitHub Packages
+
+```psh
+PS> dotnet nuget add source --username "<USERNAME>" --password "<PERSONAL_ACCESS_TOKEN>" --configfile ./nuget.config
+```
