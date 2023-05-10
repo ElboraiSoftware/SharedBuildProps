@@ -1,5 +1,8 @@
 # MSBuild configuration shared between Elborai Software projects
 
+[![Build and test](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/build_and_test.yml/badge.svg)](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/build_and_test.yml)
+[![Publish NuGet package](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/publish.yml/badge.svg)](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/publish.yml)
+
 - .gitignore, a complete gitignore ruleset for Visual Studio projects
 - .editorconfig, formatting/coding style rules for C#
 - .github/workflows, default github actions to test, build, and publish
