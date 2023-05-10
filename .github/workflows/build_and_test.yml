@@ -24,6 +24,9 @@ jobs:
         uses: elboraisoftware/actions/dotnet_setup@main
         with:
           dotnet-version: "${{ matrix.dotnet-version }}"
+          # Uncomment if private registry is used
+          # github-packages-token: "${{ secrets.NUGET_PRIVATE_REGISTRY_TOKEN }}"
+
       - name: Build and test .Net projects
         uses: elboraisoftware/actions/dotnet_build_and_test@main
         with:
