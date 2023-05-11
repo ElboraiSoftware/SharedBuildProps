@@ -12,7 +12,9 @@ jobs:
   build_test:
     strategy:
       matrix:
-        configuration: [Debug, Release]
+        configuration:
+          - Debug
+          - Release
         dotnet-version:
           - "6.0.x"
         architecture:
@@ -40,4 +42,4 @@ jobs:
           target-platform: "${{ matrix.architecture }}"
           package-project-dir: REPLACE_ME
           package-project-path: REPLACE_ME\REPLACE_ME.wapproj
-          save-to-github-artifact: "${{ matrix.save-artifact }}"
+          save-to-github-artifact: "${{ matrix.save-artifact || false }}"
