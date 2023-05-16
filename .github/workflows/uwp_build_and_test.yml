@@ -28,6 +28,9 @@ jobs:
 
     runs-on: windows-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: .Net setup
         uses: elboraisoftware/actions/dotnet_setup@main
         with:
