@@ -23,6 +23,7 @@ jobs:
       - name: .Net setup
         uses: elboraisoftware/actions/dotnet_setup@main
         with:
+          os: "${{ runner.os }}"
           dotnet-version: "${{ matrix.dotnet-version }}"
           # Uncomment if private registry is used
           # github-packages-token: "${{ secrets.NUGET_PRIVATE_REGISTRY_TOKEN }}"
