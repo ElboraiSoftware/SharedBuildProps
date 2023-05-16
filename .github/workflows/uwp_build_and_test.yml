@@ -1,0 +1,46 @@
+name: UWP build and test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_test:
+    strategy:
+      matrix:
+        configuration:
+          - Debug
+          - Release
+        dotnet-version:
+          - "6.0.x"
+        architecture:
+          - x86
+          - x64
+        # Uncomment to save Release-x64 build artifact
+        # include:
+        #   - configuration: Release
+        #     architecture: x64
+        #     save-artifact: true
+
+    runs-on: windows-latest
+    steps:
+      - name: .Net setup
+        uses: elboraisoftware/actions/dotnet_setup@main
+        with:
+          os: "${{ runner.os }}"
+          dotnet-version: "${{ matrix.dotnet-version }}"
+          # Uncomment if private registry is used
+          # github-packages-token: "${{ secrets.NUGET_PRIVATE_REGISTRY_TOKEN }}"
+
+      - name: Build and test
+        uses: elboraisoftware/actions/wpf_build_and_test@main
+        with:
+          configuration: "${{ matrix.configuration }}"
+          target-platform: "${{ matrix.architecture }}"
+          package-project-dir: REPLACE_ME
+          package-project-path: REPLACE_ME\REPLACE_ME.wapproj
+          save-to-github-artifact: "${{ matrix.save-artifact }}"
