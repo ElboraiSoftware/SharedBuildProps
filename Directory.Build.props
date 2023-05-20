@@ -4,10 +4,15 @@
             <Pack>True</Pack>
             <PackagePath>\</PackagePath>
         </None>
+        <None Include="..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
     </ItemGroup>
 
     <PropertyGroup>
         <!-- Package information -->
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 
@@ -33,5 +38,12 @@
         <ProjectNamespace>$(ProjectPrefix).$(MSBuildProjectName.Replace(" ", "_"))</ProjectNamespace>
         <RootNamespace>$(ProjectNamespace)</RootNamespace>
         <AssemblyName>$(ProjectNamespace)</AssemblyName>
+
+        <!-- Disable warnings -->
+        <!--
+            CS1591: "Missing XML comment for publicly visible type or member 'Type_or_Member'"
+            See https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs1591?redirectedfrom=MSDN.
+        -->
+        <NoWarn>$(NoWarn);1591</NoWarn>
     </PropertyGroup>
 </Project>
