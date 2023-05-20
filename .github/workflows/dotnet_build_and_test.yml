@@ -19,6 +19,7 @@ jobs:
           - windows-latest
           - ubuntu-latest
     runs-on: ${{ matrix.os }}
+    name: "${{ matrix.dotnet-version}} ${{ matrix.configuration }} (${{ matrix.os }})"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3

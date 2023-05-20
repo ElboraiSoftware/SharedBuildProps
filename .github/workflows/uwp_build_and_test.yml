@@ -10,6 +10,7 @@ on:
 
 jobs:
   build_test:
+    name: "${{ matrix.dotnet-version}} ${{ matrix.configuration }} ${{ matrix.architecture }}"
     strategy:
       matrix:
         configuration:
