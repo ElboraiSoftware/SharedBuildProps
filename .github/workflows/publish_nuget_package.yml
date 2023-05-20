@@ -37,8 +37,15 @@ env:
   dotnet-version: "6.0.x"
 
 jobs:
-  inputs-validation:
-    runs-on: ubuntu-latest
+  build-test-publish:
+    name: "${{ matrix.os }} ${{ github.event.inputs.prefix }}.${{ github.event.inputs.project }} v${{ github.event.inputs.version }}"
+    strategy:
+      matrix:
+        os:
+          - windows-latest
+          # Uncomment if needed
+          # - ubuntu-latest
+    runs-on: "${{ matrix.os }}"
     steps:
       - name: Log inputs
         shell: pwsh
@@ -49,16 +56,6 @@ jobs:
         with:
           version: "${{ github.event.inputs.version }}"
 
-  build-and-test:
-    name: "${{ github.event.inputs.prefix }}.${{ github.event.inputs.project }} v${{ github.event.inputs.version }}"
-    strategy:
-      matrix:
-        os:
-          - windows-latest
-          - ubuntu-latest
-    runs-on: ${{ matrix.os }}
-    needs: inputs-validation
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -74,21 +71,7 @@ jobs:
         uses: elboraisoftware/actions/dotnet_build_and_test@main
         with:
           configuration: Release
-
-  publish:
-    runs-on: windows-latest
-    needs: build-and-test
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: .Net setup
-        uses: elboraisoftware/actions/dotnet_setup@main
-        with:
-          os: "${{ runner.os }}"
-          dotnet-version: "${{ env.dotnet-version }}"
-          # Uncomment if private registry is used
-          # github-packages-token: "${{ secrets.NUGET_PRIVATE_REGISTRY_TOKEN }}"
+          use-msbuild: true
 
       - name: Pack and publish NuGet package
         uses: elboraisoftware/actions/dotnet_publish_nuget@main
@@ -104,3 +87,4 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
           publish-to-nuget: "${{ github.event.inputs.publish_to_nuget_org }}"
           nuget-api-key: "${{ secrets.NUGET_API_KEY }}"
+          use-msbuild: "${{ github.event.inputs.use-msbuild }}"
