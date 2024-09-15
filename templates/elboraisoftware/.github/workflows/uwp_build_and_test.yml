@@ -1,4 +1,4 @@
-name: WPF build and test
+name: UWP build and test
 
 on:
   push:
@@ -45,6 +45,6 @@ jobs:
         with:
           configuration: "${{ matrix.configuration }}"
           target-platform: "${{ matrix.architecture }}"
-          package-project-dir: REPLACE_ME
-          package-project-path: REPLACE_ME\REPLACE_ME.wapproj
-          save-to-github-artifact: "${{ matrix.save-artifact || false }}"
+          package-project-dir: TheTemplatedName
+          package-project-path: TheTemplatedName\TheTemplatedName.wapproj
+          save-to-github-artifact: "${{ matrix.save-artifact }}"

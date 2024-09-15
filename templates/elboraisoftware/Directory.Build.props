@@ -18,8 +18,8 @@
 
         <!-- Assembly information -->
         <Company>Elborai Software</Company>
-        <Authors>Samuel El-Borai (dgellow), Elborai Software (ElboraiSoftware)</Authors>
-        <Copyright>Copyright © 2023 Samuel El-Borai &amp; Elborai Software</Copyright>
+        <Authors>Sam El-Borai (dgellow), Elborai Software (ElboraiSoftware)</Authors>
+        <Copyright>Copyright © TheTemplatedCopyrightYear Sam El-Borai &amp; Elborai Software</Copyright>
         <PackagePublisherDisplayName>Elborai Software</PackagePublisherDisplayName>
         <Version>0.0.1-dev.1</Version>
 
@@ -30,9 +30,9 @@
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
 
         <!-- Prefixed namespace for all projects and assemblies -->
-        <CompanyPrefix>ElboraiSoftware</CompanyPrefix>
-        <!-- Empty SolutionPrefix if not necessary -->
-        <SolutionPrefix>SOLUTION_PREFIX_DIRECTORY_BUILD_PROPS_FILE</SolutionPrefix>
+        <CompanyPrefix>TheTemplatedCompanyPrefix</CompanyPrefix>
+        <!-- An additional prefix for the solution can be specified -->
+        <SolutionPrefix>TheTemplatedSolutionPrefix</SolutionPrefix>
         <ProjectPrefix Condition="'$(SolutionPrefix)' == ''">$(CompanyPrefix)</ProjectPrefix>
         <ProjectPrefix Condition="'$(SolutionPrefix)' != ''">$(CompanyPrefix).$(SolutionPrefix)</ProjectPrefix>
         <ProjectNamespace>$(ProjectPrefix).$(MSBuildProjectName.Replace(" ", "_"))</ProjectNamespace>

@@ -8,7 +8,7 @@ on:
         description: "Project to publish"
         type: choice
         options:
-          - REPLACE_ME_WITH_PROJECT_NAME
+          - TheTemplatedName
       version:
         description: "Version to publish"
         required: true

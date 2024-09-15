@@ -1,33 +1,50 @@
-# MSBuild configuration shared between Elborai Software projects
+# Elborai Software .NET Project Templates
 
-[![.Net build and test](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/dotnet_build_and_test.yml/badge.svg)](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/dotnet_build_and_test.yml)
-[![Publish NuGet package](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/publish_nuget_package.yml/badge.svg)](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/publish_nuget_package.yml)
-[![WPF build and test](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/wpf_build_and_test.yml/badge.svg)](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/wpf_build_and_test.yml)
-[![UWP build and test](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/uwp_build_and_test.yml/badge.svg)](https://github.com/ElboraiSoftware/REPLACE_ME/actions/workflows/uwp_build_and_test.yml)
+This repository contains templates for Elborai Software .NET projects.
 
-- .gitignore, a complete gitignore ruleset for Visual Studio projects
-- .editorconfig, formatting/coding style rules for C#
-- .github/workflows, default github actions to test, build, and publish .Net projects
-- Directory.Build.props, ensure common assembly authorship information
-- TheSolutionName.sln.DotSettings, Resharper solution-wide config
-- LICENSE.txt, a "Free use, No derivatives" license
-- nuget.config, config to use private nuget packages, requires credentials
+## Installation
 
-## How to use
+To install a template, such as `elboraisoftware`, use the following command:
 
-Either copy manually files to a solution root, or use this repository as a template on GitHub.
+```psh
+PS> dotnet new --install https://github.com/ElboraiSoftware/SharedBuildProps/main/elboraisoftware
+```
 
-### Directory.Build.props
+## Usage
 
-1. Copy manually to a solution root directory.
-2. Set `SOLUTION_PREFIX_DIRECTORY_BUILD_PROPS_FILE` to the correct value (empty if no prefix needed).
+After installation, create new .NET solutions/projects with:
 
-### TheSolutionName.sln.DotSettings
+```psh
+PS> dotnet new elboraisoftware -n MyCoolProject
+```
 
-1. Copy manually to a solution root directory.
-2. Rename to `<SolutionName>.sln.DotSettings`.
+### Template Options
 
-### How to use NuGet packages from ElboraiSoftware's GitHub Packages
+The template supports the following options:
+
+- `--useElboraiPackages`: Include Elborai Software's private GitHub Packages source in the nuget.config file.
+
+Example usage with options:
+
+```
+dotnet new elboraisoftware -n MyCoolProject --useElboraiPackages true
+```
+
+## `elboraisoftware` Template Structure
+
+- `src/`: Contains the source code projects
+- `tests/`: Contains the test projects
+- `.github/workflows/`: GitHub workflows
+- `.editorconfig`: Editor configuration file
+- `.gitignore`: A complete gitignore ruleset for Visual Studio projects
+- `Directory.Build.props`: Common build properties, ensure common assembly authorship information
+- `LICENSE.txt`: A "Free use, No derivatives" license
+- `nuget.config`: NuGet configuration
+- `README.md`: Project readme file
+- `<The templated name>.sln`: Solution file
+- `<The templated name>.sln.DotSettings`: ReSharper/Rider settings file
+
+## How to use NuGet packages from ElboraiSoftware's GitHub Packages
 
 ```psh
 PS> dotnet nuget add source --username "<USERNAME>" --password "<PERSONAL_ACCESS_TOKEN>" --configfile ./nuget.config
